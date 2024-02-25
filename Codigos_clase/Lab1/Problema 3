@@ -1,0 +1,4 @@
+horas = float(input("Introduce tus horas de esclavitud: "))
+coste = float(input("Introduce tu paga por hora: "))
+paga = horas * coste
+print("Tu paga es", paga)
