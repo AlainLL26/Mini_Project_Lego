@@ -116,6 +116,8 @@ print("Promedio de los números pares:", promedio_pares)
 print("Producto de los números impares:", producto_impares)
 ### Ejercicio 2
 
+2.- Crea un programa que solicite al usuario adivinar un número secreto. El programa debe generarun número aleatorio entre 1 y 10, y el usuario debe intentar adivinarlo. El programa debeproporcionar pistas si el número ingresado por el usuario es demasiado alto o bajo. El bucle whiledebe continuar hasta que el usuario adivine correctamente. Al final se debe imprimir en cuantosintentos el usuario logró adivinar el número.Pista:import random# Generar un número aleatorio entre 1 y 10numero_secreto = random.randint(1, 10)
+
 //Problema 2 de Tarea
 
 import random
@@ -140,38 +142,41 @@ while True:
 
 ### Ejercicio 3
 
+3.- Robot exploradorEl programa debe generar una matriz de al menos 5x5.El robot inicia su camino en la posición (0,0) de la matriz y debe salir en la posición (4,4) o lamáxima posición si se cambia el tamaño de matriz.El numero y la posición de los obstáculos es aleatoria.El robot solo puede avanzar, girar a la izquierda o a la derecha para buscar un camino libre, en eleventual caso que el robot no pueda salir debe imprimir en pantalla “Imposible llegar al destino”En caso de que el robot llegue a su destino final deberá imprimir el mapa, con los espacios libres yobstáculos de la siguiente forma X obstáculo o libreo o o X oo o o o oo o o o Xo o o o oo X X X oDeberá imprimir también la ruta que siguió.Mostrar un segundo mapa con el “camino” seguido por el robot mediante flechas
+Pista:Flecha hacia arriba: ↑ (U+2191)Flecha hacia abajo: ↓ (U+2193)Flecha hacia la izquierda: ← (U+2190)Flecha hacia la derecha: → (U+2192)
+
 //Problema 3 de Tarea 
 
 import random
 
-# Definir constantes para las direcciones
+#Definir constantes para las direcciones
 UP = 0
 RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-# Definir los símbolos para el mapa
+#Definir los símbolos para el mapa
 FREE = 'o'
 OBSTACLE = 'X'
 ROBOT = '*'
 PATH = '.'
 
-# Definir las flechas
+#Definir las flechas
 ARROW_UP = '↑'
 ARROW_DOWN = '↓'
 ARROW_LEFT = '←'
 ARROW_RIGHT = '→'
 
-# Tamaño de la matriz
+#Tamaño de la matriz
 ROWS = 5
 COLS = 5
 
-# Función para imprimir la matriz
+#Función para imprimir la matriz
 def print_matrix(matrix):
     for row in matrix:
         print(' '.join(row))
 
-# Función para generar la matriz con obstáculos aleatorios
+#Función para generar la matriz con obstáculos aleatorios
 def generate_matrix(rows, cols):
     matrix = [[FREE for _ in range(cols)] for _ in range(rows)]
     obstacles = random.sample(range(rows * cols), random.randint(1, rows * cols // 2))
@@ -181,11 +186,11 @@ def generate_matrix(rows, cols):
         matrix[row][col] = OBSTACLE
     return matrix
 
-# Función para verificar si la posición está dentro de la matriz
+#Función para verificar si la posición está dentro de la matriz
 def is_valid_move(matrix, row, col):
     return 0 <= row < len(matrix) and 0 <= col < len(matrix[0])
 
-# Función para encontrar el camino
+#Función para encontrar el camino
 def find_path(matrix):
     directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # Derecha, Abajo, Izquierda, Arriba
     path = []
@@ -214,7 +219,7 @@ def find_path(matrix):
     path.append((row, col))
     return path
 
-# Función para imprimir el camino que el robot va a seguir
+#Función para imprimir el camino que el robot va a seguir
 def print_path(matrix, path):
     for i in range(len(path) - 1):
         current_row, current_col = path[i]
@@ -231,11 +236,11 @@ def print_path(matrix, path):
                 matrix[current_row][current_col] = ARROW_UP
     matrix[path[-1][0]][path[-1][1]] = ROBOT
 
-# Genera la matriz
+#Genera la matriz
 matrix = generate_matrix(ROWS, COLS)
 path = find_path(matrix)
 
-# Imprime la matriz original
+#Imprime la matriz original
 print("Mapa original:")
 print_matrix(matrix)
 print()
@@ -247,28 +252,4 @@ if path:
     print_matrix(matrix)
 else:
     print("Imposible llegar al destino")
-
-
-### ¿Cómo compilar?
-Se recomienda utilizar Overleaf para compilar el template.
-
-## Template Reporte final (Final_report)
-El template contiene diferentes carpetas
-* bib Incluye el archivo bibliografia.bib, es recomendable utilizar un gestor de referencias (JabRef, Zotero).
-* bst Incluye el el archivo IEEEtran.bst, el cual sirve para darle el estilo de citación de los transactions de IEEE, NO modificar para mantener el formato solicitado.
-* codigos Carpeta para agregar los códigos utilizados durante el proyecto, NO se recomienda colocar todo el código en el cuerpo del documento, para eso utilizar los anexos.
-* Imagenes Carpeta para colocar las imágenes utilizadas en el documento, se recomiendo utilizar .eps.
-
-El documento main.tex se encuentra comentado para su mejor comprensión.
-
-### ¿Cómo compilar?
-Al igual que en el caso anterior, se recomienda utilizar Overleaf.
-
-## Template Entrega individual
-El documento individual debe ser anónimo y redactado en inglés.
-El template contiene una carpeta
-* Imagenes: Carpeta para colocar las imágenes usadas en el reporte, se recomienda .eps o .png
-
-### ¿Cómo compilar?
-Se recomienda utilizar Overleaf.
 
