@@ -1,4 +1,4 @@
-## Introducción a Phyton
+# Introducción a Phyton
 Python es un lenguaje de programación que se destaca por su alto nivel de abstracción, lo que significa que su sintaxis es cercana al lenguaje humano, lo que lo hace fácil de leer y escribir. Fue creado por Guido van Rossum a finales de los 80 y desde entonces ha experimentado un crecimiento exponencial en popularidad y adopción en la comunidad de desarrollo de software. Una de las características distintivas de Python es su enfoque en la legibilidad del código, utilizando espacios en blanco para definir la estructura y los bloques, lo que facilita la comprensión del flujo de control del programa.
 
 Además de su sintaxis clara, Python es conocido por su amplia biblioteca estándar, que proporciona una gran cantidad de módulos y funciones listas para usar que cubren una amplia gama de aplicaciones, desde manipulación de archivos hasta desarrollo web y procesamiento de datos. Esta biblioteca estándar, combinada con su capacidad para integrarse fácilmente con otros lenguajes y herramientas, lo convierte en una opción atractiva para una variedad de proyectos y aplicaciones.
@@ -49,8 +49,9 @@ condición es una expresión booleana que se evalúa en cada iteración.
 El bucle while se ejecuta siempre que la condición sea True.
 
 
-## Problemas a resolver
-# Ejercicios en clase 
+# Problemas a resolver
+## Ejercicios en clase 
+### Ejercicio 1
 Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma
 
 //Problema 1 CLase
@@ -78,7 +79,41 @@ coste = float(input("Introduce tu paga por hora: "))
 paga = horas * coste
 print("Tu paga es", paga)
 
-# Ejercicios de Tarea
+## Ejercicios de Tarea
+
+
+1.-• Crea una lista llamada numeros que contenga al menos 10 números.• Calcula el promedio de los números pares y el producto de los números impares.• Imprime los resultados
+
+//Problema 1. Tarea
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Lista de números
+
+#Inicia las variables para calcular el promedio de los números pares y el producto de los números impares
+suma_pares = 0
+cantidad_pares = 0
+producto_impares = 1
+
+#Iteramos sobre la lista de números
+for numero in numeros:
+    if numero % 2 == 0:  # Si el número es par
+        suma_pares += numero  # Agregamos el número a la suma de pares
+        cantidad_pares += 1  # Incrementamos el contador de pares
+    else:
+        producto_impares *= numero  # Multiplicamos el número al producto de impares
+
+#Calculamos el promedio de los números pares
+if cantidad_pares != 0:
+    promedio_pares = suma_pares / cantidad_pares
+else:
+    promedio_pares = 0
+
+#Imprimimos los resultados
+print("Promedio de los números pares:", promedio_pares)
+print("Producto de los números impares:", producto_impares)
+
+
+
+
 
 ### ¿Cómo compilar?
 Se recomienda utilizar Overleaf para compilar el template.
