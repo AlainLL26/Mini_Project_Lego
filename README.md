@@ -241,14 +241,23 @@ matrix = generate_matrix(ROWS, COLS)
 path = find_path(matrix)
 
 #Imprime la matriz original
+
 print("Mapa original:")
+
 print_matrix(matrix)
+
 print()
 
 if path:
+  
     # Imprimir el mapa con la ruta del robot
+    
     print("Mapa con la ruta del robot:")
+    
     print_path(matrix, path)
+    
     print_matrix(matrix)
+
 else:
+
     print("Imposible llegar al destino")
