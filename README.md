@@ -150,94 +150,171 @@ Pista:Flecha hacia arriba: ↑ (U+2191)Flecha hacia abajo: ↓ (U+2193)Flecha ha
 import random
 
 #Definir constantes para las direcciones
+
 UP = 0
+
 RIGHT = 1
+
 DOWN = 2
+
 LEFT = 3
 
 #Definir los símbolos para el mapa
+
 FREE = 'o'
+
 OBSTACLE = 'X'
+
 ROBOT = '*'
+
 PATH = '.'
 
 #Definir las flechas
+
 ARROW_UP = '↑'
+
 ARROW_DOWN = '↓'
+
 ARROW_LEFT = '←'
+
 ARROW_RIGHT = '→'
 
 #Tamaño de la matriz
+
 ROWS = 5
+
 COLS = 5
 
 #Función para imprimir la matriz
+
 def print_matrix(matrix):
+
     for row in matrix:
+    
         print(' '.join(row))
 
+
+
 #Función para generar la matriz con obstáculos aleatorios
+
 def generate_matrix(rows, cols):
+
     matrix = [[FREE for _ in range(cols)] for _ in range(rows)]
+    
     obstacles = random.sample(range(rows * cols), random.randint(1, rows * cols // 2))
-    for obstacle in obstacles:
+    
+for obstacle in obstacles:
+
         row = obstacle // cols
+        
         col = obstacle % cols
+        
         matrix[row][col] = OBSTACLE
+    
     return matrix
 
+
 #Función para verificar si la posición está dentro de la matriz
+
 def is_valid_move(matrix, row, col):
+
     return 0 <= row < len(matrix) and 0 <= col < len(matrix[0])
 
+
+
 #Función para encontrar el camino
+
 def find_path(matrix):
+
     directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # Derecha, Abajo, Izquierda, Arriba
+    
     path = []
+    
     row, col = 0, 0
+    
     direction = RIGHT
+    
     while True:
+    
         if (row, col) == (len(matrix) - 1, len(matrix[0]) - 1):
+        
             break
-        found = False
+        foun
+        
+        d = False
+        
         for _ in range(4):
+        
             new_direction = (direction + _) % 4
+            
             new_row, new_col = row + directions[new_direction][0], col + directions[new_direction][1]
+            
             if is_valid_move(matrix, new_row, new_col) and matrix[new_row][new_col] == FREE:
+            
                 matrix[row][col] = PATH
+                
                 path.append((row, col))
+                
                 row, col = new_row, new_col
+                
                 direction = new_direction
+                
                 found = True
+                
                 break
+       
         if not found:
+        
             if path:
+            
                 matrix[row][col] = PATH
+                
                 row, col = path.pop()
+            
             else:
+            
                 return None
+    
     path.append((row, col))
+    
     return path
 
 #Función para imprimir el camino que el robot va a seguir
+
 def print_path(matrix, path):
+
     for i in range(len(path) - 1):
+    
         current_row, current_col = path[i]
+        
         next_row, next_col = path[i + 1]
+        
         if current_row == next_row:
+        
             if current_col < next_col:
+            
                 matrix[current_row][current_col] = ARROW_RIGHT
+            
             else:
+            
                 matrix[current_row][current_col] = ARROW_LEFT
+        
         else:
+        
             if current_row < next_row:
+            
                 matrix[current_row][current_col] = ARROW_DOWN
+            
             else:
+            
                 matrix[current_row][current_col] = ARROW_UP
+   
     matrix[path[-1][0]][path[-1][1]] = ROBOT
 
 #Genera la matriz
+
 matrix = generate_matrix(ROWS, COLS)
+
 path = find_path(matrix)
 
 #Imprime la matriz original
