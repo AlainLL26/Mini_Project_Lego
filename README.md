@@ -196,6 +196,8 @@ Pista:Flecha hacia arriba: ↑ (U+2191)Flecha hacia abajo: ↓ (U+2193)Flecha ha
 
 //Problema 3 de Tarea 
 
+### Creación de la Matriz: Se definió una matriz utilizando una lista de listas en Python, donde cada elemento de la lista externa representa una fila y cada elemento de las listas internas representa una columna. Se inicializó la matriz con valores 'o' que representan espacios libres.
+
 import random
 
 #Definir constantes para las direcciones
@@ -234,6 +236,7 @@ ROWS = 5
 
 COLS = 5
 
+
 #Función para imprimir la matriz
 
 def print_matrix(matrix):
@@ -242,7 +245,7 @@ def print_matrix(matrix):
     
         print(' '.join(row))
 
-
+### Generación Aleatoria de Obstáculos: Se utilizó la función random.randint() para generar aleatoriamente la posición de los obstáculos dentro de la matriz. Estos obstáculos se representaron con el carácter 'X' en la matriz.
 
 #Función para generar la matriz con obstáculos aleatorios
 
@@ -269,7 +272,7 @@ def is_valid_move(matrix, row, col):
 
     return 0 <= row < len(matrix) and 0 <= col < len(matrix[0])
 
-
+### Movimiento del Robot: Se implementó un bucle while que permitía al robot moverse dentro de la matriz hasta llegar a su destino o hasta que no pudiera avanzar más. En cada iteración del bucle, el robot tomaba decisiones basadas en la disponibilidad de las casillas adyacentes para avanzar hacia su destino. Se implementaron funciones que permitían al robot moverse hacia arriba, abajo, izquierda o derecha, verificando antes si la casilla a la que quería moverse era válida, es decir, no contenía un obstáculo y estaba dentro de los límites de la matriz.
 
 #Función para encontrar el camino
 
@@ -327,6 +330,8 @@ def find_path(matrix):
     path.append((row, col))
     
     return path
+
+### Impresión de la Ruta del Robot: Después de que el robot alcanzara su destino o no pudiera avanzar más, se imprimió la matriz resultante junto con la ruta seguida por el robot y los obstáculos. La ruta se marcó con flechas para indicar la dirección de movimiento del robot en cada paso.
 
 #Función para imprimir el camino que el robot va a seguir
 
@@ -387,11 +392,5 @@ if path:
 else:
 
     print("Imposible llegar al destino")
-
-
-Para resolver el problema del "Robot Explorador", primero generé una matriz con obstáculos aleatorios y posicioné al robot en la posición inicial (0,0). Luego, implementé un algoritmo que permitiera al robot moverse dentro de la matriz, avanzando, girando a la izquierda o a la derecha para encontrar un camino libre hacia su destino (posición (4,4) o la máxima posición posible). Utilicé un bucle para controlar el movimiento del robot, deteniéndolo cuando alcanza su destino o no puede avanzar más. Al final, el programa imprime el mapa con la ruta seguida por el robot y los obstáculos, y muestra la ruta con flechas para indicar la dirección de movimiento del robot en cada paso.
-
-
-
 
 
