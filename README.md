@@ -7,11 +7,78 @@ Python es un lenguaje interpretado, lo que significa que no requiere un proceso 
 
 Su naturaleza multiplataforma permite que los programas escritos en Python se ejecuten en una variedad de sistemas operativos, incluyendo Windows, macOS y Linux, lo que lo convierte en una herramienta versátil para desarrolladores y empresas que buscan crear software que pueda ejecutarse en diferentes entornos.
 
-## Template minuta para reuniones semanales (Meeting_minute)
-El template toma como base el código publicado en (http://github.com/cmichi/latex-template-collection). 
-* Es OBLIGATORIO generar una minuta después de cada reunión realizada.
-* Es OBLGATORIO realizar al menos una reunión semanal. 
-* Las minutas deberán ser entregadas en Blackboard.
+En Python, los tipos de variables se pueden clasificar de la siguiente manera:
+
+Enteros (int): Representan números enteros, por ejemplo, x = 5.
+
+Flotantes (float): Representan números decimales, por ejemplo, y = 3.14.
+
+Cadenas de caracteres (str): Representan texto, por ejemplo, nombre = "Juan".
+
+Booleanos (bool): Representan valores de verdad, True o False, por ejemplo, activo = True.
+
+Listas (list): Colección ordenada y modificable de elementos, por ejemplo, mi_lista = [1, 2, 3, 4].
+
+Tuplas (tuple): Colección ordenada e inmutable de elementos, por ejemplo, mi_tupla = (1, 2, 3, 4).
+
+Diccionarios (dict): Colección no ordenada de pares clave-valor, por ejemplo, mi_dict = {"nombre": "Juan", "edad": 30}.
+
+Conjuntos (set): Colección no ordenada de elementos únicos, por ejemplo, mi_set = {1, 2, 3, 4}.
+
+Las estructuras de control en Python, como los bucles for y while, tienen una sintaxis sencilla y elegante:
+
+Estructura de un bucle for:
+python
+Copy code
+for variable in iterable:
+    # Código a ejecutar en cada iteración
+variable toma el valor de cada elemento en el iterable.
+iterable puede ser una lista, tupla, conjunto, diccionario u otro objeto iterable.
+Ejemplo:
+python
+Copy code
+for i in range(5):
+    print(i)
+Estructura de un bucle while:
+python
+Copy code
+while condición:
+    # Código a ejecutar mientras la condición sea verdadera
+    # La condición se evalúa en cada iteración
+condición es una expresión booleana que se evalúa en cada iteración.
+El bucle while se ejecuta siempre que la condición sea True.
+
+
+## Problemas a resolver
+# Ejercicios en clase 
+Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma
+
+//Problema 1 CLase
+barras = int(input("Introduce el número de barras vendidas que no son frescas: "))
+precio = 3.49 
+descuento = 0.6
+coste = barras * precio * (1 - descuento)
+print("El coste de una barra fresca es " + str(precio) + "€")
+print("El descuento sobre una barra no fresca es " + str(descuento * 100) + "%")
+print("El coste final a pagar es " + str(round(coste, 2)) + "€")
+
+Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma
+
+//Problema 2 claase
+n = int(input("Introduce un numero: "))
+suma = n * (n + 1) / 2
+print("La suma de los primeros números enteros desde 1 hasta " + str(n) + " es " + str(suma))
+
+Escribir un programa que pregunte al usuario por el número de horas trabajadas y el costo por hora.Después debe mostrar por pantalla la paga que le corresponde.Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores.Imprime el nombre y el sueldo a pagar de cada operador.
+
+
+//Problema 3 clase
+horas = float(input("Introduce tus horas de esclavitud: "))
+coste = float(input("Introduce tu paga por hora: "))
+paga = horas * coste
+print("Tu paga es", paga)
+
+# Ejercicios de Tarea
 
 ### ¿Cómo compilar?
 Se recomienda utilizar Overleaf para compilar el template.
