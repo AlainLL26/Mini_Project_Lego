@@ -82,6 +82,7 @@ suma = n * (n + 1) / 2
 
 print("La suma de los primeros números enteros desde 1 hasta " + str(n) + " es " + str(suma))
 
+En este ejercicio aplicamos una funcion para resolver el problema solicitado.
 ### Ejercicio 3
 
 Escribir un programa que pregunte al usuario por el número de horas trabajadas y el costo por hora.Después debe mostrar por pantalla la paga que le corresponde.Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores.Imprime el nombre y el sueldo a pagar de cada operador.
@@ -97,6 +98,8 @@ coste = float(input("Introduce tu paga por hora: "))
 paga = horas * coste
 
 print("Tu paga es", paga)
+
+En este ejercicio aplicamos una funcion para resolver el problema solicitado.
 
 ## Ejercicios de Tarea
 ### Ejercicio 1
@@ -146,6 +149,12 @@ print("Promedio de los números pares:", promedio_pares)
 
 print("Producto de los números impares:", producto_impares)
 
+Para resolver el problema 1, primero creé una lista llamada numeros que contiene al menos 10 números. Luego, utilicé un bucle for para iterar sobre la lista y calcular el promedio de los números pares y el producto de los números impares.
+
+Dentro del bucle, utilicé una estructura if para distinguir entre números pares e impares. Calculé la suma de los números pares y conté cuántos números pares hay para luego calcular el promedio. Para los números impares, los multipliqué entre sí para obtener el producto.
+
+Finalmente, imprimí los resultados del promedio de los números pares y el producto de los números impares.
+
 ### Ejercicio 2
 
 2.- Crea un programa que solicite al usuario adivinar un número secreto. El programa debe generarun número aleatorio entre 1 y 10, y el usuario debe intentar adivinarlo. El programa debeproporcionar pistas si el número ingresado por el usuario es demasiado alto o bajo. El bucle whiledebe continuar hasta que el usuario adivine correctamente. Al final se debe imprimir en cuantosintentos el usuario logró adivinar el número.Pista:import random# Generar un número aleatorio entre 1 y 10numero_secreto = random.randint(1, 10)
@@ -173,6 +182,12 @@ while True:
         print("El número esta bajo. Intenta de nuevo.")
     else:
         print("El número esta alto. Intenta de nuevo.")
+
+Para resolver el problema 2, creé un programa que solicita al usuario adivinar un número secreto generado aleatoriamente entre 1 y 10. Utilicé la función random.randint(1, 10) para generar el número secreto.
+
+Luego, utilicé un bucle while para permitir al usuario ingresar múltiples intentos hasta que adivinara correctamente el número secreto o se quedara sin intentos. En cada iteración del bucle, comparé el número ingresado por el usuario con el número secreto y proporcioné pistas sobre si el número ingresado era demasiado alto o demasiado bajo.
+
+Cuando el usuario adivinó correctamente el número secreto, imprimí un mensaje de felicitaciones junto con el número de intentos que le llevó al usuario adivinar el número. Si el usuario no pudo adivinar el número después de ciertos intentos, el programa terminó y le indicó que no pudo adivinar el número secreto.
 
 ### Ejercicio 3
 
@@ -372,3 +387,11 @@ if path:
 else:
 
     print("Imposible llegar al destino")
+
+
+Para resolver el problema del "Robot Explorador", primero generé una matriz con obstáculos aleatorios y posicioné al robot en la posición inicial (0,0). Luego, implementé un algoritmo que permitiera al robot moverse dentro de la matriz, avanzando, girando a la izquierda o a la derecha para encontrar un camino libre hacia su destino (posición (4,4) o la máxima posición posible). Utilicé un bucle para controlar el movimiento del robot, deteniéndolo cuando alcanza su destino o no puede avanzar más. Al final, el programa imprime el mapa con la ruta seguida por el robot y los obstáculos, y muestra la ruta con flechas para indicar la dirección de movimiento del robot en cada paso.
+
+
+
+
+
