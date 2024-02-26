@@ -252,4 +252,3 @@ if path:
     print_matrix(matrix)
 else:
     print("Imposible llegar al destino")
-
