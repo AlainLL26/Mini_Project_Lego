@@ -55,12 +55,19 @@ El bucle while se ejecuta siempre que la condición sea True.
 Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma
 
 //Problema 1 CLase
+
 barras = int(input("Introduce el número de barras vendidas que no son frescas: "))
+
 precio = 3.49 
+
 descuento = 0.6
+
 coste = barras * precio * (1 - descuento)
+
 print("El coste de una barra fresca es " + str(precio) + "€")
+
 print("El descuento sobre una barra no fresca es " + str(descuento * 100) + "%")
+
 print("El coste final a pagar es " + str(round(coste, 2)) + "€")
 
 ### Ejercicio 2
@@ -68,8 +75,11 @@ print("El coste final a pagar es " + str(round(coste, 2)) + "€")
 Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma
 
 //Problema 2 claase
+
 n = int(input("Introduce un numero: "))
+
 suma = n * (n + 1) / 2
+
 print("La suma de los primeros números enteros desde 1 hasta " + str(n) + " es " + str(suma))
 
 ### Ejercicio 3
@@ -77,10 +87,15 @@ print("La suma de los primeros números enteros desde 1 hasta " + str(n) + " es 
 Escribir un programa que pregunte al usuario por el número de horas trabajadas y el costo por hora.Después debe mostrar por pantalla la paga que le corresponde.Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores.Imprime el nombre y el sueldo a pagar de cada operador.
 
 
+
 //Problema 3 clase
+
 horas = float(input("Introduce tus horas de esclavitud: "))
+
 coste = float(input("Introduce tu paga por hora: "))
+
 paga = horas * coste
+
 print("Tu paga es", paga)
 
 ## Ejercicios de Tarea
@@ -93,27 +108,44 @@ print("Tu paga es", paga)
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Lista de números
 
 #Inicia las variables para calcular el promedio de los números pares y el producto de los números impares
+
 suma_pares = 0
+
 cantidad_pares = 0
+
 producto_impares = 1
 
 #Iteramos sobre la lista de números
+
 for numero in numeros:
+    
     if numero % 2 == 0:  # Si el número es par
+        
         suma_pares += numero  # Agregamos el número a la suma de pares
+    
         cantidad_pares += 1  # Incrementamos el contador de pares
+    
     else:
+
         producto_impares *= numero  # Multiplicamos el número al producto de impares
 
 #Calculamos el promedio de los números pares
+
 if cantidad_pares != 0:
+
     promedio_pares = suma_pares / cantidad_pares
+
 else:
+
     promedio_pares = 0
 
+
 #Imprimimos los resultados
+
 print("Promedio de los números pares:", promedio_pares)
+
 print("Producto de los números impares:", producto_impares)
+
 ### Ejercicio 2
 
 2.- Crea un programa que solicite al usuario adivinar un número secreto. El programa debe generarun número aleatorio entre 1 y 10, y el usuario debe intentar adivinarlo. El programa debeproporcionar pistas si el número ingresado por el usuario es demasiado alto o bajo. El bucle whiledebe continuar hasta que el usuario adivine correctamente. Al final se debe imprimir en cuantosintentos el usuario logró adivinar el número.Pista:import random# Generar un número aleatorio entre 1 y 10numero_secreto = random.randint(1, 10)
@@ -123,11 +155,13 @@ print("Producto de los números impares:", producto_impares)
 import random
 
 numero_secreto = random.randint(1, 10)  # Generar un número aleatorio de 1 y 10
+
 intentos = 0  # Inicia el contador de intentos
 
 print("Bienvenido al adivina quien de los numeros")
 
 while True:
+
     intento = int(input("Adivina el número secreto: "))  # Solicita al usuario que ingrese un número
 
     intentos += 1  # Incrementar el contador de intentos
